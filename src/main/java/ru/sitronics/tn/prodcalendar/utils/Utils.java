@@ -10,6 +10,12 @@ import static java.util.stream.Collectors.toMap;
 
 public class Utils {
 
+    /**
+     * @param calendar объект типа Календарь.
+     * @param inputDate строка с датой начала отсчета.
+     * @param count число производственных дней.
+     * @return дату типа LocalDate.
+     */
     public static LocalDate getProdDate(Calendar calendar, String inputDate, int count) {
         LocalDate start = LocalDate.parse(inputDate);
 
@@ -35,6 +41,10 @@ public class Utils {
         return null;
     }
 
+    /**
+     * @param calendar из Интернета за определенный год.
+     * @return мапу, которая содержит по ключу номер месяца, а по значению - список праздничных и выходных дней.
+     */
     private static Map<Integer, List<Integer>> getDaysOff(Calendar calendar) {
         return calendar.getMonths()
                 .stream()

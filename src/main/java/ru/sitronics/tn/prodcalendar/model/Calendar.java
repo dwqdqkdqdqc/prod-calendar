@@ -28,9 +28,4 @@ public class Calendar {
     @JsonIgnore
     @Transient
     private Map<String, Integer> statistic;
-
-    public Calendar(String year, List<MonthOfYear> months) {
-        this.year = year;
-        this.months = months;
-    }
 }

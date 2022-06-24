@@ -25,11 +25,11 @@ public class ProdCalendarApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) {
 		String json = template.getForObject(url, String.class);
-		log.info("got json from the net");
+		log.info("Got json from the net");
 		try {
 			Calendar calendar = new ObjectMapper().readValue(json, Calendar.class);
 			calendarService.save(calendar);
-			log.info("saved the obj to the db");
+			log.info("Saved the obj to the db");
 		} catch (JsonProcessingException e) {
 			throw new RuntimeException(e);
 		}

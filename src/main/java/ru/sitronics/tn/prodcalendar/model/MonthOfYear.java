@@ -10,9 +10,4 @@ import javax.persistence.Embeddable;
 public class MonthOfYear {
     private int month;
     private String days;
-
-    public MonthOfYear(int month, String days) {
-        this.month = month;
-        this.days = days;
-    }
 }
