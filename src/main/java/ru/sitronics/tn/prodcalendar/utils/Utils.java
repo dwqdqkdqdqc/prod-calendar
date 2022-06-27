@@ -22,7 +22,7 @@ public class Utils {
         Map<Integer, List<Integer>> daysOff = getDaysOff(calendar);
         List<LocalDate> workDays = LocalDate
                 .of(start.getYear(), 1, 1)
-                .datesUntil(LocalDate.of(2023, 1, 1))
+                .datesUntil(LocalDate.of(2023, 1, 1)) //из БД
                 .filter(l -> {
                     List<Integer> integers = daysOff.get(l.getMonthValue());
                     return !integers.contains(l.getDayOfMonth());
