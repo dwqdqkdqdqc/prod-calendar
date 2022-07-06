@@ -8,7 +8,7 @@ import ru.sitronics.tn.prodcalendar.service.DateService;
 import ru.sitronics.tn.prodcalendar.utils.exception.NotFoundException;
 
 @RequiredArgsConstructor
-@RestController
+@RestController("/calendar")
 public class DateController {
 
     private final DateService dateService;
