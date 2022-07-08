@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 public class Date {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NotNull
     @Column(name = "day")

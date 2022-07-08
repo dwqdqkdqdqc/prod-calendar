@@ -23,9 +23,6 @@ spring:
   sql:
     init:
       mode: always
-server:
-  servlet:
-    context-path: /calendar
 logging:
   level:
     root: warn

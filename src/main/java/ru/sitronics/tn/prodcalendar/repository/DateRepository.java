@@ -5,4 +5,4 @@ import org.springframework.stereotype.Repository;
 import ru.sitronics.tn.prodcalendar.model.Date;
 
 @Repository
-public interface DateRepository extends JpaRepository<Date, Integer> { }
+public interface DateRepository extends JpaRepository<Date, Long> { }
