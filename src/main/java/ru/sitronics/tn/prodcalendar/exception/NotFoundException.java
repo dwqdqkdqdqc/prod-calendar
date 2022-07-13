@@ -1,4 +1,4 @@
-package ru.sitronics.tn.prodcalendar.utils.exception;
+package ru.sitronics.tn.prodcalendar.exception;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {

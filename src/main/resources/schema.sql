@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS dates;
+DROP TABLE IF EXISTS holiday;
 
-CREATE TABLE dates (
-    id SERIAL PRIMARY KEY,
-    year INT NOT NULL,
-    month INT NOT NULL,
-    day INT NOT NULL
+CREATE TABLE holiday (
+--     id INT PRIMARY KEY NOT NULL DEFAULT nextval('hol_seq'),
+--     id SERIAL PRIMARY KEY,
+    id uuid primary key default gen_random_uuid(),
+    date timestamp without time zone not null
 );

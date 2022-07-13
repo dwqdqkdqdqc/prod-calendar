@@ -2,7 +2,8 @@ package ru.sitronics.tn.prodcalendar.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.sitronics.tn.prodcalendar.model.Date;
+import ru.sitronics.tn.prodcalendar.model.Holiday;
+import java.util.UUID;
 
 @Repository
-public interface DateRepository extends JpaRepository<Date, Integer> { }
+public interface HolidayRepository extends JpaRepository<Holiday, UUID> { }
