@@ -27,5 +27,9 @@ logging:
   level:
     root: warn
     ru.sitronics.tn: debug
+  logback:
+    rollingpolicy:
+      max-history: 0
+      max-file-size: 25MB
 pattern:
   format: "dd.MM.yyyy"
