@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -16,16 +15,12 @@ import java.util.UUID;
 @Entity
 @Table(name = "holiday")
 public class Holiday {
-    @Id
-//    @GeneratedValue
 //    private UUID id;
-
-
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-//    @SequenceGenerator(name = "seqGen", sequenceName = "holiday_id_seq", allocationSize = 1)
-    private long id;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @NotNull
+    @Column(name = "date")
     private LocalDateTime date;
 }

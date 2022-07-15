@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 import ru.sitronics.tn.prodcalendar.exception.NotFoundException;
 import ru.sitronics.tn.prodcalendar.model.Holiday;
 import ru.sitronics.tn.prodcalendar.repository.HolidayRepository;
-import java.time.*;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,19 +18,16 @@ public class HolidayService {
 
     private final HolidayRepository holidayRepository;
 
-    private List<LocalDateTime> holidays;
-
-    public void findHolidays() {
-        holidays = holidayRepository.findAll()
-                .stream()
-                .map(Holiday::getDate)
-                .toList();
-    }
-
     public LocalDateTime getRequiredDate(String input, int count) {
         if (count <= 0) {
             throw new NotFoundException("Invalid count of days.");
         }
+
+        List<LocalDateTime> holidays = holidayRepository.findAll()
+                .stream()
+                .map(Holiday::getDate)
+                .toList();
+
         LocalDateTime workDay = LocalDateTime.parse(input);
         List<LocalDateTime> allWorkDays = Stream
                 .iterate(workDay, i -> i.plus(1, ChronoUnit.DAYS))
@@ -45,6 +43,6 @@ public class HolidayService {
     }
 
     public void saveAll(List<Holiday> holidays) {
-        holidayRepository.saveAllAndFlush(holidays);
+        holidayRepository.saveAll(holidays);
     }
 }

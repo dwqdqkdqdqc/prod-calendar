@@ -13,7 +13,7 @@ spring:
         application-name: "Microservice: ${spring.application.name} (${USERNAME})"
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     open-in-view: false
     properties:
       hibernate:
@@ -21,7 +21,7 @@ spring:
         format_sql: true
         order_inserts: true
         jdbc:
-          batch_size: 30
+          batch_size: 150
           batch_versioned_data: true
         order_updates: true
         generate_statistics: true
@@ -30,8 +30,12 @@ spring:
     show-sql: true
   sql:
     init:
-      mode: never
+      mode: always
 logging:
   level:
     root: warn
     ru.sitronics.tn: debug
+  logback:
+    rollingpolicy:
+      max-history: 0
+      max-file-size: 25MB
