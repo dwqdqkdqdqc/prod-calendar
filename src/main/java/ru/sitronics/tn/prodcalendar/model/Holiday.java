@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "holiday")
 public class Holiday {
-//    private UUID id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
