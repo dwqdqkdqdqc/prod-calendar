@@ -1,3 +1,9 @@
+buildscript {
+	ext {
+		openapi = '1.6.9'
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.7.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -20,7 +26,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+	implementation "org.springdoc:springdoc-openapi-ui:$openapi"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

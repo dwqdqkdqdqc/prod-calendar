@@ -1,6 +1,6 @@
 spring:
   application:
-    name: date-service
+    name: prod-calendar
   datasource:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DATABASE:transneftpua_db}
     username: ${DB_USER:postgres}
@@ -27,6 +27,7 @@ spring:
         generate_statistics: true
         cache:
           use_second_level_cache: false
+        default_batch_fetch_size: 150
     show-sql: true
   sql:
     init:
