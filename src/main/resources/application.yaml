@@ -28,6 +28,7 @@ spring:
         cache:
           use_second_level_cache: false
         default_batch_fetch_size: 150
+        default_schema: other_services
     show-sql: true
   sql:
     init:
