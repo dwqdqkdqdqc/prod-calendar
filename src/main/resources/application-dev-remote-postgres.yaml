@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://213.108.129.175:5432/postgres
+    username: postgres
+    password: transneft
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 2
+      data-source-properties:
+        application-name: "Microservice: ${spring.application.name} (${USERNAME})"
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

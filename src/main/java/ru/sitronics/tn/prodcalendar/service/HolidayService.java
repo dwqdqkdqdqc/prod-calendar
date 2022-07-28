@@ -1,8 +1,9 @@
 package ru.sitronics.tn.prodcalendar.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import ru.sitronics.tn.prodcalendar.exception.NotFoundException;
+import ru.sitronics.tn.prodcalendar.exception.CustomAppException;
 import ru.sitronics.tn.prodcalendar.model.Holiday;
 import ru.sitronics.tn.prodcalendar.repository.HolidayRepository;
 import java.time.LocalDateTime;
@@ -15,13 +16,11 @@ import java.util.stream.Stream;
 @Service
 @RequiredArgsConstructor
 public class HolidayService {
-
     private final HolidayRepository holidayRepository;
 
     public LocalDateTime getRequiredDate(String input, int count) {
-        if (count <= 0) {
-            throw new NotFoundException("Invalid count of days.");
-        }
+        if (count <= 0)
+            throw new CustomAppException(HttpStatus.BAD_REQUEST, "Invalid count of days.");
 
         List<LocalDateTime> holidays = holidayRepository.findAll()
                 .stream()

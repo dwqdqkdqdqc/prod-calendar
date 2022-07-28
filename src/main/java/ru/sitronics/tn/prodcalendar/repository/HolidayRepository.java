@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import ru.sitronics.tn.prodcalendar.model.Holiday;
 
 @Repository
-public interface HolidayRepository extends JpaRepository<Holiday, Long> { }
+public interface HolidayRepository extends JpaRepository<Holiday, Long> {
+}
