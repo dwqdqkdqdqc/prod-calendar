@@ -1,4 +1,4 @@
-INSERT INTO holiday (date) VALUES
+INSERT INTO other_services.holiday (date) VALUES
 ('2022-01-01 00:00:00'),
 ('2022-01-02 00:00:00'),
 ('2022-01-03 00:00:00'),
