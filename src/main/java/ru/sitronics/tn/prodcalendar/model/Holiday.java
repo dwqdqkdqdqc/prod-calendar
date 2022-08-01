@@ -3,7 +3,6 @@ package ru.sitronics.tn.prodcalendar.model;
 import lombok.*;
 import org.hibernate.Hibernate;
 import ru.sitronics.tn.prodcalendar.model.base.BaseLongId;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
