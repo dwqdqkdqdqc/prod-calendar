@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 public class HolidayService {
     private final HolidayRepository holidayRepository;
 
-    public LocalDateTime getRequiredDate(String input, int count) {
+    public LocalDateTime getRequiredDate(String date, int count) {
         if (count <= 0)
             throw new CustomAppException(HttpStatus.BAD_REQUEST, "Invalid count of days.");
 
@@ -27,7 +27,7 @@ public class HolidayService {
                 .map(Holiday::getDate)
                 .toList();
 
-        LocalDateTime workDay = LocalDateTime.parse(input);
+        LocalDateTime workDay = LocalDateTime.parse(date);
         List<LocalDateTime> allWorkDays = Stream
                 .iterate(workDay, i -> i.plus(1, ChronoUnit.DAYS))
                 .limit(ChronoUnit.DAYS.between(workDay, LocalDateTime.of(workDay.getYear() + 1, Month.JANUARY, 1, 0, 0)))
@@ -36,8 +36,8 @@ public class HolidayService {
         return allWorkDays.stream().toList().get(count);
     }
 
-    public void save(String input) {
-        LocalDateTime localDateTime = LocalDateTime.parse(input);
+    public void save(String date) {
+        LocalDateTime localDateTime = LocalDateTime.parse(date);
         holidayRepository.save(Holiday.builder().date(localDateTime).build());
     }
 
